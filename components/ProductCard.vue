@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-card class="product-card pa-2" width="360px">
+    <v-card class="product-card pa-sm-2">
       <div class="product-card_image-container">
         <img :src="product.srcImg" class="product-card_image"/>
       </div>
@@ -38,14 +38,23 @@ export default {
 };
 </script>
 <style lang="scss" scoped>
+
+  .product-card {
+    width: 300px;
+    @media screen and (min-width: 600px) {
+      width: 360px;
+    }
+  }
   .product-card_image-container {
     width: 100%;
     height: 260px;
     .product-card_image {
-      width: 100%;
-      height: 100%;
       object-position: center;
       object-fit: contain;
+      // @media screen and (min-width: 600px) {
+        width: 100%;
+        height: 100%;
+      // }
     }
   }
   .product-card_price{

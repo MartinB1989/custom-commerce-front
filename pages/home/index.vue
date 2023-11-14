@@ -1,5 +1,5 @@
 <template>
-  <div class="w-100%">
+  <div class="w-100">
     <v-carousel
       cycle
       height="500"
@@ -15,8 +15,8 @@
       />
     </v-carousel>
 
-    <div class="px-6 py-16">
-      <div class="d-flex justify-center">
+    <div class="px-sm-6 py-16">
+      <div class="d-md-flex justify-sm-center">
         <div v-for="n in 3" :key="n" class="px-2">
           <CategoryCard
             title="Categoría de productos"
@@ -33,9 +33,8 @@
         >
           <v-slide-group
             v-model="model"
-            class="pa-4"
+            class="py-4"
             center-active
-            show-arrows
           >
             <v-slide-group-item
               v-for="product in products"
