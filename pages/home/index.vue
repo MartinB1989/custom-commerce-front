@@ -1,51 +1,16 @@
 <template>
   <div class="w-100">
-    <v-carousel
-      cycle
-      height="500"
-      hide-delimiter-background
-      show-arrows="hover"
-      color="white"
-    >
-      <v-carousel-item
-        v-for="(slide) in slides"
-        :key="slide.id"
-        :src="slide.imgUrl"
-        cover
-      />
-    </v-carousel>
-
-    <div class="px-sm-6 py-16">
-      <div class="d-md-flex justify-sm-center">
-        <div v-for="n in 3" :key="n" class="px-2">
-          <CategoryCard
-            title="Categoría de productos"
-            subtitle="Productos de la categoría"
-            image="https://cdn.pixabay.com/photo/2017/05/17/11/20/table-lamp-2320603_1280.png"
-          />
-        </div>
-      </div>
-      <div class="mb-16" v-for="sliderSection in sections" :key="sliderSection.id">
+    <Header :slides="slides" />
+    <div class="px-sm-6 py-16 max-width">
+      <CategoryCardList :categories="categoriesTop" />
+      <div class="mb-16" v-for="sliderSection in sectionsOne" :key="sliderSection.id">
         <p class="text-h4 mt-16 mb-8">{{ sliderSection.title }}</p>
-        <v-sheet
-          class="mx-auto"
-          elevation="8"
-        >
-          <v-slide-group
-            v-model="model"
-            class="py-4"
-            center-active
-          >
-            <v-slide-group-item
-              v-for="product in products"
-              :key="product.srcImg"
-            >
-              <ProductCard
-                :product="product"
-              />
-            </v-slide-group-item>
-          </v-slide-group>
-        </v-sheet>
+        <ProductSlide :products="products" />
+      </div>
+      <CategoryCardList :categories="categoriesMiddle" />
+      <div class="mb-16" v-for="sliderSection in sectionsTwo" :key="sliderSection.id">
+        <p class="text-h4 mt-16 mb-8">{{ sliderSection.title }}</p>
+          <ProductSlide :products="products" />
       </div>
     </div>
   </div>
@@ -59,6 +24,10 @@
 </script>
 <script setup>
   import CategoryCard from "~/pages/home/components/CategoryCard.vue";
+  import CategoryCardList from "./components/CategoryCardList.vue"
+  import ProductSlide from "./components/ProductSlide.vue"
+  import Header from "./components/CarouselHeader.vue"
+
   const slides = ref([
     {
       id: 1,
@@ -135,7 +104,7 @@
       price: '200'
     },
   ])
-  const sections = ref([
+  const sectionsOne = ref([
     {
       id: 1,
       title: 'Destacados'
@@ -144,6 +113,8 @@
       id: 2,
       title: 'Tecnólogia'
     },
+  ])
+  const sectionsTwo = ref([
     {
       id: 3,
       title: 'Electrodomesticos'
@@ -153,8 +124,53 @@
       title: 'Indumentaria'
     },
   ])
+  const categoriesTop = ref([
+    {
+      id: 1,
+      title: 'Tecnología Renovada',
+      subtitle: '¡Hasta 50% más barato',
+      imgUrl: 'https://images.tiendamia.com/materiales/general/2022/argentina/categorias%20home/octubre/ar_cybermonday_categorias-home_renovada_187x270.png'
+    },
+    {
+      id: 2,
+      title: 'Productos selecionados',
+      subtitle: '',
+      imgUrl: 'https://images.tiendamia.com/materiales/general/2023/argentina/cat_home/ar_categorias_home_camara_187x270.png'
+    },
+    {
+      id: 3,
+      title: 'Stanley',
+      subtitle: 'Hasta 30% Off',
+      imgUrl: 'https://images.tiendamia.com/materiales/general/2022/argentina/categorias%20home/octubre/ar-tm-cat-home-stanley.png'
+    },
+  ])
+  const categoriesMiddle = ref([
+    {
+      id: 1,
+      title: 'Relojes',
+      subtitle: 'Modelos exclusivos',
+      imgUrl: 'https://images.tiendamia.com/materiales/general/2023/argentina/octubre/cat-home/ar_categorias_home_relojes_187x270.png'
+    },
+    {
+      id: 2,
+      title: 'Consolas Gaming',
+      subtitle: '¡Hasta 40% más barato que en Argentina',
+      imgUrl: 'https://images.tiendamia.com/materiales/general/2023/argentina/octubre/cat-home/ar_categorias_home_gaming_187x270.png'
+    },
+    {
+      id: 3,
+      title: 'Moda Exclusiva',
+      subtitle: 'Las mejores marcas',
+      imgUrl: 'https://images.tiendamia.com/materiales/general/2023/uruguay/septiembre/cat-home/uy_categorias_home_adidas_187x270.png'
+    },
+  ])
+
 </script>
 <style lang="scss" scoped>
+.max-width {
+  margin: 0 auto;
+  max-width: 1440px;
+}
 .home_img-slider {
   object-position: center;
   object-fit: cover;

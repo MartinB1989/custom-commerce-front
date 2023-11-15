@@ -1,29 +1,29 @@
 <template>
   <div>
-    <v-card class="product-card pa-sm-2">
-      <div class="product-card_image-container">
-        <img :src="product.srcImg" class="product-card_image"/>
-      </div>
-      <v-card-title>
-        <v-layout align-center justify-center>
-          <v-subheader>{{ product.title }}</v-subheader>
-        </v-layout>
-      </v-card-title>
-      <v-card-subtitle class="product-card_price d-flex justify-space-between">
-        ${{ product.price }}
-        <v-chip color="success" text-color="white" v-if="product.discount">
-          <span class="product-card_discount-text">
-            - {{ product.discount }}
-          </span>
-          <v-icon right>mdi-percent</v-icon>
-        </v-chip>
-      </v-card-subtitle>
-      <div class="d-flex justify-center">
-      <!-- <v-card-actions> -->
-        <v-btn color="red" class="mt-8" append-icon="mdi-cart-variant">Add to cart</v-btn>
-      <!-- </v-card-actions> -->
-      </div>
-    </v-card>
+    <NuxtLink :to="`/product/${product.id}`" class="text-decoration-none">
+      <v-card class="product-card pa-sm-2">
+        <div class="product-card_image-container">
+          <img :src="product.srcImg" class="product-card_image"/>
+        </div>
+        <v-card-title>
+          {{ product.title }}
+        </v-card-title>
+        <v-card-subtitle class="product-card_price d-flex justify-space-between">
+          ${{ product.price }}
+          <v-chip color="success" text-color="white" v-if="product.discount">
+            <span class="product-card_discount-text">
+              - {{ product.discount }}
+            </span>
+            <v-icon right>mdi-percent</v-icon>
+          </v-chip>
+        </v-card-subtitle>
+        <div class="d-flex justify-center">
+        <!-- <v-card-actions> -->
+          <v-btn color="secondary" class="mt-8" append-icon="mdi-cart-variant">Add to cart</v-btn>
+        <!-- </v-card-actions> -->
+        </div>
+      </v-card>
+    </NuxtLink>
   </div>
 </template>
 
@@ -42,7 +42,7 @@ export default {
   .product-card {
     width: 300px;
     @media screen and (min-width: 600px) {
-      width: 360px;
+      width: 300px;
     }
   }
   .product-card_image-container {

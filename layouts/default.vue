@@ -17,8 +17,8 @@
         </div>
         <template v-slot:append>
           <NuxtLink to="/shopping-cart">
-            <v-badge content="4" color="error" class="pr-16">
-              <v-icon icon="mdi-cart-variant" size="30"/>
+            <v-badge content="4" color="optional_red" class="pr-16">
+              <v-icon icon="mdi-cart-variant" color="white" size="30"/>
             </v-badge>
           </NuxtLink>
         </template>

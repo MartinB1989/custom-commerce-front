@@ -1,7 +1,8 @@
 <template>
   <v-card
     class="mx-auto mb-4 category-card"
-    max-width="375px"
+    width="100%"
+    max-width="500px"
   >
     <v-row
       justify="space-between"
@@ -10,8 +11,8 @@
     >
       <v-col cols="12" sm="6" class="d-flex flex-column justify-space-between col-one">
         <div>
-          <h2 class="text-center text-sm-start">{{ title }}</h2>
-          <p class="text-center text-sm-start">{{ subtitle }}</p>
+          <h2 class="text-center category-card_title text-sm-start">{{ title }}</h2>
+          <p class="text-center category-card_subtitle text-sm-start">{{ subtitle }}</p>
         </div>
         <v-btn color="primary" @click="onSeeProducts" class="d-none d-sm-block">Ver productos</v-btn>
       </v-col>
@@ -59,7 +60,7 @@ export default {
 .category-card {
   height: 400px;
   @media screen and (min-width: 600px) {
-    height: 270px;
+    height: 300px;
   }
   .col-one{
     @media screen and (min-width: 600px) {
@@ -85,5 +86,15 @@ export default {
     height: 100%;
     object-fit: cover;
   }
+}
+.category-card_title {
+  font-size: 32px;
+  font-weight: 500;
+  line-height: 1.2;
+  margin-bottom: 8px;
+}
+.category-card_subtitle {
+  font-size: 24px;
+  line-height: 1.2;
 }
 </style>
