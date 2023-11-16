@@ -19,7 +19,7 @@
         </v-card-subtitle>
         <div class="d-flex justify-center">
         <!-- <v-card-actions> -->
-          <v-btn color="secondary" class="mt-8" append-icon="mdi-cart-variant">Add to cart</v-btn>
+          <v-btn color="primary" class="mt-8" append-icon="mdi-cart-variant">Add to cart</v-btn>
         <!-- </v-card-actions> -->
         </div>
       </v-card>

@@ -12,7 +12,7 @@ export default defineNuxtPlugin((app) => {
           dark: false,
           colors: {
             primary: colors.deepOrange.accent2,
-            secondary: colors.deepPurple.base,
+            secondary: colors.purple.lighten2,
             optional_red: colors.red.base,
             white: '#ffffff'
           }

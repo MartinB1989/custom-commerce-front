@@ -14,7 +14,7 @@
           <h2 class="text-center category-card_title text-sm-start">{{ title }}</h2>
           <p class="text-center category-card_subtitle text-sm-start">{{ subtitle }}</p>
         </div>
-        <v-btn color="primary" @click="onSeeProducts" class="d-none d-sm-block">Ver productos</v-btn>
+        <v-btn color="secondary" @click="onSeeProducts" class="d-none d-sm-block">Ver productos</v-btn>
       </v-col>
       <v-col cols="12" sm="6" class="d-flex justify-center col-two">
         <img
@@ -25,7 +25,7 @@
         />
       </v-col>
       <v-col class="d-sm-none ">
-        <v-btn block color="primary" @click="onSeeProducts">Ver productos</v-btn>
+        <v-btn block color="secondary" @click="onSeeProducts">Ver productos</v-btn>
       </v-col>
     </v-row>
   </v-card>

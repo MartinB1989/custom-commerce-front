@@ -26,6 +26,7 @@
       <div class="max-width">
         <slot />
       </div>
+      <DefaultFooter />
     </v-app>
   </div>
 </template>
