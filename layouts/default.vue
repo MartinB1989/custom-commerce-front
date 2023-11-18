@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div class="default-layout-app">
     <v-app>
       <v-app-bar :elevation="2" color="primary" class="default_app-bar">
         <NuxtLink to="/">
@@ -32,6 +32,9 @@
 </template>
 
 <style lang="scss" scoped>
+.default-layout-app {
+  background-color: #212121;
+}
 .default_app-bar {
   position: relative !important;
 }

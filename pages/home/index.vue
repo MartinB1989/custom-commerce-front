@@ -31,19 +31,19 @@
   const slides = ref([
     {
       id: 1,
-      imgUrl: 'https://http2.mlstatic.com/storage/splinter-admin/o:f_webp,q_auto:best/1699842080589-home-mainslider-desktop-4.png'
+      imgUrl: 'https://http2.mlstatic.com/D_NQ_673284-MLA72879189307_112023-OO.webp'
     },
     {
       id: 2,
-      imgUrl: 'https://http2.mlstatic.com/storage/splinter-admin/o:f_webp,q_auto:best/1699843834866-home-mainslider-desktop-v2.png'
+      imgUrl: 'https://http2.mlstatic.com/D_NQ_632513-MLA72784134388_112023-OO.webp'
     },
     {
       id: 3,
-      imgUrl: 'https://http2.mlstatic.com/storage/splinter-admin/o:f_webp,q_auto:best/1699842531477-homesliderdesktop.png'
+      imgUrl: 'https://http2.mlstatic.com/D_NQ_846616-MLA72782205048_112023-OO.webp'
     },
     {
       id: 4,
-      imgUrl: 'https://http2.mlstatic.com/storage/splinter-admin/o:f_webp,q_auto:best/1699842208097-mainsliderdektoptecnodeals.png'
+      imgUrl: 'https://http2.mlstatic.com/D_NQ_894025-MLA72803276380_112023-OO.webp'
     },
   ])
   const products = ref([

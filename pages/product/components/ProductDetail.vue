@@ -2,7 +2,7 @@
   <div class="container">
     <v-row>
       <v-col cols="6">
-        <v-img :src="product.image" alt="Imagen del producto" />
+        <ProductImage :images="product.image"/>
       </v-col>
       <v-col cols="6">
         <h2>{{ product.name }}</h2>
@@ -20,23 +20,14 @@
   </div>
 </template>
 
-<script>
-export default {
-  props: {
-    product: {
-      type: Object,
-      required: true,
-    },
-  },
-  data() {
-    return {
-      quantity: 1,
-    };
-  },
-  methods: {
-    addToCart() {
-      // Aquí puedes enviar la información del producto al carrito de compras
-    },
-  },
-};
+<script setup>
+import ProductImage from './ProductImage.vue';
+
+const props = defineProps(['product'])
+const quantity = ref(1)
+function addToCart() {
+  console.log('Agregado al carrito')
+}
 </script>
+<style lang="scss" scoped>
+</style>

@@ -2,11 +2,11 @@
   <v-card
     class="mx-auto mb-4 category-card"
     width="100%"
-    max-width="500px"
+    max-width="600px"
   >
     <v-row
       justify="space-between"
-      align="center"
+      align="center bg-white"
       class="pa-0 ma-0 w-100 h-100"
     >
       <v-col cols="12" sm="6" class="d-flex flex-column justify-space-between col-one">
@@ -60,7 +60,7 @@ export default {
 .category-card {
   height: 400px;
   @media screen and (min-width: 600px) {
-    height: 300px;
+    height: 320px;
   }
   .col-one{
     @media screen and (min-width: 600px) {
